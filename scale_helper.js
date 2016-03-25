@@ -1,17 +1,17 @@
 if (Meteor.isClient) {
   // globals for note and mode
   var data = {};
-  var newChattersDep = new Tracker.Dependency();
+  var tracker = new Tracker.Dependency();
 
   Template.demo.helpers({
     note: function () {
-      newChattersDep.depend();
-      console.log("daisdjasdasd" + data.note);
+      tracker.depend();
       return data.note;
+    },
+    mode: function () {
+      tracker.depend();
+      return data.mode;
     }
-    // mode: function () {
-    //   return data.mode;
-    // }
   });
 
   Template.body.events({
@@ -21,11 +21,9 @@ if (Meteor.isClient) {
  
       // Get value from form element
       data.note = event.target.note.value;
-      //data.mode = event.target.mode.value;
+      data.mode = event.target.mode.value;
 
-      console.log(data.note);
-      console.log(JSON.stringify(data));
-      newChattersDep.changed();
+      tracker.changed();
     }
   });
 }

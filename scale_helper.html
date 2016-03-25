@@ -17,18 +17,69 @@
 		  <option value="d">D</option>
 		</select>
 
-<!-- 		<select name="mode">
+		<select name="mode">
 		  <option value="ionian">Ionian</option>
 		  <option value="aeolian">Aeolian</option>
-		</select> -->
+		</select>
 
 		<button type="submit">Click me</button>
 	</form>
   </div>
 
+	<div class="guitar-neck">
+		
+
+		<div class="fret first"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+		<div class="fret"></div>
+			
+		
+		<ul class="dots">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+
+		</ul>
+		<ul class="strings">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		
+		<ul class="open-notes">
+			<li class="low-e">E</li>
+			<li class="b">B</li>
+			<li class="g">G</li>
+			<li class="d">D</li>
+			<li class="a">A</li>
+			<li class="high-e">E</li>
+		</ul>
+		<div class="notes">
+			<div class="mask low-e"><ul></ul></div>
+			<div class="mask a"><ul></ul></div>
+			<div class="mask d"><ul></ul></div>
+			<div class="mask g"><ul></ul></div>
+			<div class="mask b"><ul></ul></div>
+			<div class="mask high-e"><ul></ul></div>
+		</div>
+	</div>
 
 </body>
 
 <template name="demo">
-  <p>Note is {{note}} !!!</p>
+  <p>Note is {{note}} and the mode is {{mode}}!!!</p>
 </template>
