@@ -3,12 +3,32 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Guitar Helper</h1>
 
-  {{> hello}}
+  {{> demo}}
+  
+
+  <div>
+	<form class="scale-creator">
+		<select name="note">
+		  <option value="a">A</option>
+		  <option value="b">B</option>
+		  <option value="c">C</option>
+		  <option value="d">D</option>
+		</select>
+
+<!-- 		<select name="mode">
+		  <option value="ionian">Ionian</option>
+		  <option value="aeolian">Aeolian</option>
+		</select> -->
+
+		<button type="submit">Click me</button>
+	</form>
+  </div>
+
+
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="demo">
+  <p>Note is {{note}} !!!</p>
 </template>

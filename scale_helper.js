@@ -1,17 +1,31 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+  // globals for note and mode
+  var data = {};
+  var newChattersDep = new Tracker.Dependency();
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+  Template.demo.helpers({
+    note: function () {
+      newChattersDep.depend();
+      console.log("daisdjasdasd" + data.note);
+      return data.note;
     }
+    // mode: function () {
+    //   return data.mode;
+    // }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+  Template.body.events({
+    "submit .scale-creator": function (event) {
+      // Prevent default browser form submit
+      event.preventDefault();
+ 
+      // Get value from form element
+      data.note = event.target.note.value;
+      //data.mode = event.target.mode.value;
+
+      console.log(data.note);
+      console.log(JSON.stringify(data));
+      newChattersDep.changed();
     }
   });
 }
@@ -21,3 +35,5 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+
