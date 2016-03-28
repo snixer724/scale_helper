@@ -6,6 +6,9 @@ if (Meteor.isClient) {
   var data = {note:"a", mode:"ionian", tuning:"estandard"};
   var tuning = {
     dstandard:['D','A','F','C','G','D'],
+    dropc:['D','A','F','C','G','C'],
+    ebstandard:['Eb','Bb','Gb','Db','Ab','Eb'],
+    dropd:['E','B','G','D','A','D'],
     estandard:['E','B','G','D','A','E']
   };
 

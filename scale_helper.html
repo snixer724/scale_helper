@@ -38,13 +38,12 @@
 		</ul>
 
 		<ul class="open-notes">
-			<li class="low-e">E</li>
-			<li class="b">B</li>
-			<li class="g">G</li>
-			<li class="d">D</li>
-			<li class="a">A</li>
+			{{> fretbase string="0"}}
+			{{> fretbase string="1"}}
+			{{> fretbase string="2"}}
+			{{> fretbase string="3"}}
+			{{> fretbase string="4"}}
 			{{> fretbase string="5"}}
-			<!-- <li class="high-e">E</li> -->
 		</ul>
 
 		<div class="notes">
@@ -73,7 +72,11 @@
 
 			<select name="tuning">
 				<option value="estandard">E Standard</option>
+				<option value="dropd">Drop D</option>
+				<option value="ebstandard">Eb Standard</option>
 				<option value="dstandard">D Standard</option>
+				<option value="dropc">Drop C</option>
+
 			</select>
 
 			<button type="submit">Click me</button>
